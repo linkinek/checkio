@@ -4,7 +4,7 @@ function commonWords(first, second) {
     let result = "";
     let firstArray = first.split(",");
     let secondArray = second.split(",");
-    firstArray.filter(sFirst => secondArray.filter(sSecond => sSecond == sFirst).length > 0)
+    firstArray.filter(sFirst => secondArray.includes(sFirst) > 0)
         .sort().forEach(t => result = result.length == 0 ? t : (result + "," + t));
     return result;
 }
